@@ -23,14 +23,14 @@ def to_greyscale(image):
 
 def pixel_to_ascii(image):
     pixels = image.getdata()
-    ascii_str = "";
+    ascii_str = ""
     for pixel in pixels:
-        ascii_str += ASCII_CHARS[pixel//25];
+        ascii_str += ASCII_CHARS[pixel//25]
     return ascii_str
 						
 def convertor(args):
 	image = PIL.Image.open(args.img)	
-	image = resize(image);   
+	image = resize(image)
 	greyscale_image = to_greyscale(image) 
 	ascii_str = pixel_to_ascii(greyscale_image)
 	img_width = greyscale_image.width
